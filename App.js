@@ -1,28 +1,34 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import { HomePage } from './src/screens/HomePage'
-import { Reserve } from './src/screens/Reserve'
+import { Router, Stack, Scene } from 'react-native-router-flux';
+import { HomePage } from './src/screens/HomePage';
+import { Reserve } from './src/screens/Reserve';
+import { Map } from './src/screens/Map';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      // <View style={styles.container}>
-        <HomePage />
-      // </View>
-    );
-  }
-}
+// export default class App extends React.Component {
+//   render() {
+//     return (
+//       // <View style={styles.container}>
+//         <HomePage />
+//       // </View>
+//     );
+//   }
+// }
 
-// const App = () => (
-//   <Router>
-//     <Stack key="root">
-//       <Scene key="home" component={HomePage} title="Home"/>
-//       <Scene key="reserve" component={Reserve} title="Reserve"/>
-//     </Stack>
-//   </Router>
-// );
+const App = () => (
+  <Router>
+    <Stack key="root">
+      <Scene key="home" component={HomePage} title="Home"
+             hideNavBar="true" />
+      <Scene key="reserve" component={Reserve} title="Reserve"
+             hideNavBar="true" />
+      <Scene key="map" component={Map} title="Map"
+             hideNavBar="true" />
+    </Stack>
+  </Router>
+);
 
-// export default App;
+export default App;
 
 const styles = StyleSheet.create({
   container: {

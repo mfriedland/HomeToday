@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export class HomePage extends React.Component {
   render() {
@@ -15,8 +16,11 @@ export class HomePage extends React.Component {
           <Text style={styles.text}>Stay at work until you need to</Text>
         </View>
         <View style={styles.bottomContainer}>
-          <TouchableHighlight style={styles.reserveButton} onPress={()=>{}}>
+          <TouchableHighlight style={styles.reserveButton} onPress={()=> Actions.reserve()}>
             <Text style={styles.reserveButtonText}>Reserve your bed</Text>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.reserveButton} onPress={()=> Actions.map()}>
+            <Text style={styles.reserveButtonText}>View the Map</Text>
           </TouchableHighlight>
         </View>
       </View>
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     justifyContent: 'flex-end',
   },
   text: {
